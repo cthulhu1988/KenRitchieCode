@@ -1,24 +1,10 @@
 #include <stdio.h>
-#define IN 1
-#define OUT 0
 
-int main(){
-  int c, n1, nw, nc, state;
-  state = OUT;
-  n1 = nw = nc = 0;
+main(){
+	double nc;
+	for(nc = 0; getchar() != (EOF & '\n'); ++nc)
+		;
+	printf("%.0f\n", nc);
 
-  while ( ( c = getchar() ) != EOF) {
-    ++nc;
-    if(c == '\n')
-      ++n1;
-    if(c == ' ' || c == '\n' || c == '\t')
-      state = OUT;
-    else if(state == OUT){
-      state = IN;
-      ++nw;
-    }
-  }
-  printf("%d %d %d\n",n1, nw, nc );
- // Enter control + d to simulate a EOF character
 
 }
